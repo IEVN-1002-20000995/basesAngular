@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class ProductListComponent {
 
+//*ngIf=true, o false   Hace una accion si es verdadero o falso
+
   productos:any[]=[
     {
       "productoId":1,
@@ -16,7 +18,7 @@ export class ProductListComponent {
       "Year":2023,
       "Marca":"NISSAN",
       "Color":"Azul",
-      "ImagenURL":""
+      "ImagenUrl":"https://acroadtrip.blob.core.windows.net/catalogo-imagenes/xl/RT_V_0c7166c16ff74073b65851f7f0b360ed.jpg"
     },
     {
       "productoId":2,
@@ -26,7 +28,7 @@ export class ProductListComponent {
       "Year":2022,
       "Marca":"AUDI",
       "Color":"Azul",
-      "ImagenURL":""
+      "ImagenUrl":"https://acnews.blob.core.windows.net/imgnews/medium/NAZ_3a2049521d694131ac5fa4632c7d8325.jpg"
     },
     {
       "productoId":3,
@@ -36,8 +38,8 @@ export class ProductListComponent {
       "Year":2020,
       "Marca":"KIA",
       "Color":"Azul",
-      "ImagenURL":""
-    },
+      "ImagenUrl":"https://cdn.buttercms.com/JATRezqBSzmBK1jOXk4q"
+    }
   ]
 
 }
