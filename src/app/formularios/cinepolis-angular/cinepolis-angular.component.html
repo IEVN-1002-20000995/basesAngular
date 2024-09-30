@@ -1,0 +1,46 @@
+<p>cinepolis-angular works!</p>
+
+<form [formGroup]="cinepolisForm" (ngSubmit)="procesar()">
+  <div class="form-container">
+    <!-- Cuadro de Entradas -->
+    <div class="input-section">
+      <h3>Entradas</h3>
+      <div>
+        <label>Nombre:</label>
+        <input type="text" formControlName="nombre" placeholder="Ingrese su nombre" />
+      </div>
+      <div>
+        <label>Cantidad de compradores:</label>
+        <input type="number" formControlName="compradores" min="1" placeholder="Número de compradores" />
+      </div>
+      <div>
+        <label>Tarjeta Cineco:</label>
+        <input type="radio" formControlName="cineco" [value]="true" /> Sí
+        <input type="radio" formControlName="cineco" [value]="false" /> No
+      </div>
+      <div>
+        <label>Cantidad de boletos:</label>
+        <input type="number" formControlName="cantidadBoletos" [min]="1" [max]="maxBoletos" placeholder="Número de boletos" />
+        <p *ngIf="cinepolisForm.get('cantidadBoletos')?.value > maxBoletos" style="color: red;">
+          No se pueden comprar más de {{ maxBoletos }} boletos para {{ cinepolisForm.get('compradores')?.value }} comprador(es).
+        </p>
+      </div>
+    </div>
+
+    <!-- Cuadro de Salidas -->
+    <div class="output-section">
+      <h3>Salidas</h3>
+      <div>
+        <label>Valor a pagar:</label>
+        <input type="number" [value]="valorPagar" readonly />
+      </div>
+    </div>
+
+    <!-- Cuadro de Acciones -->
+    <div class="action-section">
+      <h3>Acciones</h3>
+      <button type="submit">Procesar</button>
+      <button type="button" (click)="salir()">Salir</button>
+    </div>
+  </div>
+</form>

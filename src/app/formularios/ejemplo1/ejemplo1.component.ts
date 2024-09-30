@@ -10,7 +10,6 @@ export class Ejemplo1Component implements OnInit{
   formulario!:FormGroup;
   resultado!:number;
 
-constructor() {}
 ngOnInit(): void {
   this.formulario=new FormGroup({
     numero1: new FormControl('',Validators.required),
